@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class Main {
+public class ShortestPathInFloodfill {
     public static boolean inRange(int r , int c , int n , int m , boolean [][] maze){
         if(r<0 || c<0 || r>=n || c>=m || maze[r][c] == true){
             return false;
