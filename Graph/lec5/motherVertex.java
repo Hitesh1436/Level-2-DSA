@@ -1,8 +1,8 @@
 //   ------------------ GFG--------------
 
 
-class Solution
-{
+class Solution{
+
     //Function to find a Mother Vertex in the Graph.
     public int findMotherVertex(int V, ArrayList<ArrayList<Integer>>adj)
     {

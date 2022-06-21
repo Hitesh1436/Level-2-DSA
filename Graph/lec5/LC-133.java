@@ -3,7 +3,6 @@ class Solution {
         if(node == null){
             return null;
         }
-        
         HashMap<Integer, Node> visited = new HashMap<>();
         return helper(node, visited);
     }

@@ -2,7 +2,6 @@
 
 
 class Solution{
-
     //Function to find number of strongly connected components in the graph.
     public int kosaraju(int V, ArrayList<ArrayList<Integer>> adj){
         boolean[] vis1 = new boolean[V];
