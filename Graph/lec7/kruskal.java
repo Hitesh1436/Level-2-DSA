@@ -37,7 +37,7 @@ public class Main {
          graph[v2].add(new Edge(v2, v1, wt));
       }
 
-      // write your code here
+      // Actual Code Starts Here ...
       kruskals(graph);
    }
    
@@ -82,7 +82,7 @@ public class Main {
            return parent[x];
        }
    }
-   
+   // s1l -> set one Lead s2l -> set two lead
    public static void union(int s1l, int s2l){
        if(rank[s1l] < rank[s2l]){
            parent[s1l] = s2l;
