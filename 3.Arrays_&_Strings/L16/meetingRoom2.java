@@ -10,16 +10,10 @@
  */
 
 public class Solution {
-    /**
-     * @param intervals: an array of meeting time intervals
-     * @return: the minimum number of conference rooms required
-     */
     public int minMeetingRooms(List<Interval> intervals) {
-        // Write your code here
         if(intervals.size() <= 1){
             return 1;
         }
-
         int[] start = new int[intervals.size()];
         int[] end = new int[intervals.size()];
 
@@ -29,12 +23,11 @@ public class Solution {
             end[i] = inv.end;
             i++;
         }
-
         Arrays.sort(start);
         Arrays.sort(end);
 
-        System.out.println(Arrays.toString(start));
-        System.out.println(Arrays.toString(end));
+        // System.out.println(Arrays.toString(start));
+        // System.out.println(Arrays.toString(end));
         i = 0;
         int j = 0;
         int count = 0;
@@ -48,7 +41,7 @@ public class Solution {
                 count--;
             }
 
-            System.out.println(count);
+            // System.out.println(count);
 
             reqd = Math.max(count, reqd);
         }
