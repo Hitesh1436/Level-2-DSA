@@ -7,18 +7,18 @@ class Solution {
         map.get(0).add(1);
         for(int i = 0; i < stones.length - 1; i++){
             int stone = stones[i];
-            
             for(int step: map.get(stone)){
                 int reach = stone + step;
                 
                 if(reach == stones[stones.length - 1]){
                     return true;
                 } else if(map.containsKey(reach)) {
-                    map.get(reach).add(step);
-                    map.get(reach).add(step + 1);
+                    HashSet<Integer> steps = map.get(reach);
                     if(step - 1 > 0){
-                        map.get(reach).add(step - 1);
+                        steps.add(step -1);
                     }
+                    steps.add(step);
+                    steps.add(step + 1);
                 }
             }
         }
