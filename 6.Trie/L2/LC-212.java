@@ -3,7 +3,6 @@ class Solution {
         Node[] arr = new Node[26];
         boolean eow = false;
     }
-    
     Node root = new Node();
     public List<String> findWords(char[][] board, String[] words) {
         for(String word: words){
@@ -16,23 +15,19 @@ class Solution {
             }
             temp.eow = true;
         }
-        
         boolean[][] vis = new boolean[board.length][board[0].length];
         for(int i = 0; i < board.length; i++){
             for(int j = 0; j < board[0].length; j++){
                 helper(board, vis, i, j, new StringBuilder(), root);
             }
         }
-        
         return new ArrayList<>(res);
     }
-    
     int[][] dirs = {{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
     HashSet<String> res = new HashSet<>();
-    void helper(char[][] board, boolean[][] vis, int i, int j, StringBuilder sb, Node node){
+   private void helper(char[][] board, boolean[][] vis, int i, int j, StringBuilder sb, Node node){
         char ch = board[i][j];
-        sb.append(ch);
-        
+        sb.append(ch);   
         if(node.arr[ch - 'a'] == null){
             sb.deleteCharAt(sb.length() - 1);
             return;
@@ -41,7 +36,6 @@ class Solution {
         if(child.eow){
             res.add(sb.toString());
         }
-        
         vis[i][j] = true;
         for(int[] dir: dirs){
             int ii = i + dir[0];

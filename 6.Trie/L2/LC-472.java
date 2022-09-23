@@ -3,7 +3,6 @@ class Solution {
         Node[] arr = new Node[26];
         boolean eow = false;
     }
-    
     Node root = new Node();
     public List<String> findAllConcatenatedWordsInADict(String[] words) {
         for(String word: words){
@@ -16,7 +15,6 @@ class Solution {
             }
             temp.eow = true;
         }
-        
         List<String> res = new ArrayList<>();
         for(String word: words){
             flag = false;
@@ -27,9 +25,8 @@ class Solution {
         }
         return res;
     }
-    
     boolean flag = false;
-    void wordBreak(String word, int j, int wsf){
+    private void wordBreak(String word, int j, int wsf){
         if(j == word.length()){
             if(wsf >= 2){
                 flag = true;
