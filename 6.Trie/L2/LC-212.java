@@ -33,7 +33,7 @@ class Solution {
             return;
         }
         Node child = node.arr[ch - 'a'];
-        if(child.eow){
+        if(child.eow == true){
             res.add(sb.toString());
         }
         vis[i][j] = true;

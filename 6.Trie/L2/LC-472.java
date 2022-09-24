@@ -26,8 +26,8 @@ class Solution {
         return res;
     }
     boolean flag = false;
-    private void wordBreak(String word, int j, int wsf){
-        if(j == word.length()){
+    private void wordBreak(String word, int i, int wsf){
+        if(i == word.length()){  // wsf -> word so far
             if(wsf >= 2){
                 flag = true;
             }
@@ -35,12 +35,12 @@ class Solution {
         }
         
         Node temp = root;
-        for(int i = j; i < word.length(); i++){
-            char ch = word.charAt(i);
+        for(int j = i; j < word.length(); j++){
+            char ch = word.charAt(j);
             if(temp.arr[ch - 'a'] != null){
                 temp = temp.arr[ch - 'a'];
                 if(temp.eow == true){
-                    wordBreak(word, i + 1, wsf + 1);
+                    wordBreak(word, j + 1, wsf + 1);
                 }
             } else {
                 return;
