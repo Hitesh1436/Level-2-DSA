@@ -1,10 +1,7 @@
-class Solution
-{
-    boolean checkIsAP(int arr[] ,int n)
-    {
-        // code here
+class Solution{
+    boolean checkIsAP(int arr[] ,int n){
         HashSet<Integer> set = new HashSet<>();
-        int min = Integer.MAX_VALUE;
+        int min = Integer.MAX_VALUE;     //min -> minimun and smin -> second minimum nikalkr krrhe hn
         int smin = Integer.MAX_VALUE;
         for(int val: arr){
             set.add(val);
@@ -16,7 +13,6 @@ class Solution
                 smin = val;
             }
         }
-        
         int d = smin - min;
         for(int i = 1; i <= n; i++){
             if(set.contains(min) == false){
@@ -25,7 +21,6 @@ class Solution
                 min += d;
             }
         }
-        
         return true;
     }
 }
